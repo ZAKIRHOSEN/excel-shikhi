@@ -1,0 +1,517 @@
+@import "tailwindcss";
+
+/* =========================================================
+   EXCEL SHIKHI — GLOBAL DESIGN SYSTEM
+   ========================================================= */
+
+@theme {
+  /* =========================
+     Brand Colors
+  ========================= */
+
+  --color-primary: #006a4e;
+  --color-primary-dark: #004d38;
+
+  --color-accent: #2dbe60;
+  --color-accent-light: #5fd88a;
+
+  /* =========================
+     Light Theme
+  ========================= */
+
+  --color-background: #f8fff9;
+  --color-surface: #ffffff;
+
+  --color-text: #1a2e1f;
+  --color-text-muted: #5a6b5e;
+
+  --color-border: #d4e8dc;
+
+  /* =========================
+     Typography
+  ========================= */
+
+  --font-sans:
+    "Noto Sans Bengali",
+    "Hind Siliguri",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.dark {
+  --color-background: #0b1711;
+  --color-surface: #14241c;
+
+  --color-text: #edf8f1;
+  --color-text-muted: #a8c0b0;
+
+  --color-border: #294235;
+
+  --color-primary: #00a878;
+  --color-primary-dark: #007a59;
+
+  --color-accent: #35c96c;
+  --color-accent-light: #68df94;
+}
+
+
+/* =========================================================
+   HTML / BODY
+   ========================================================= */
+
+html {
+  background-color: var(--color-background);
+  color: var(--color-text);
+
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-background text-text font-sans antialiased;
+
+  margin: 0;
+  min-width: 320px;
+
+  background-color: var(--color-background);
+  color: var(--color-text);
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* =========================================================
+   GLOBAL ELEMENTS
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #b9efd0;
+  color: #003d2d;
+}
+
+.dark ::selection {
+  background-color: #176b4c;
+  color: #f2fff7;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(45, 190, 96, 0.35);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   INPUTS / FORM ELEMENTS
+   ========================================================= */
+
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #182b21;
+  color: #edf8f1;
+  border-color: #304d3d;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #789584;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #edf7f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9bc9ad;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #65a981;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0b1711;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #315340;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #427055;
+}
+
+
+/* =========================================================
+   SURFACE / CARD SYSTEM
+   ========================================================= */
+
+.dark .bg-white {
+  background-color: #14241c !important;
+}
+
+.dark .bg-slate-50 {
+  background-color: #182b21 !important;
+}
+
+.dark .bg-slate-100 {
+  background-color: #0f1d16 !important;
+}
+
+.dark .border-slate-200 {
+  border-color: #2b4637 !important;
+}
+
+
+/* =========================================================
+   TEXT COLOR FIX
+   ---------------------------------------------------------
+   Lesson.tsx-এ ব্যবহৃত Tailwind slate classes যেন
+   Dark Mode-এ অদৃশ্য না হয়ে যায়।
+   ========================================================= */
+
+.dark .text-slate-900,
+.dark .text-slate-800 {
+  color: #edf8f1 !important;
+}
+
+.dark .text-slate-700 {
+  color: #d2e6d9 !important;
+}
+
+.dark .text-slate-600 {
+  color: #b1c9b9 !important;
+}
+
+.dark .text-slate-500 {
+  color: #91ad9c !important;
+}
+
+.dark .text-slate-400 {
+  color: #7f9b8a !important;
+}
+
+
+/* =========================================================
+   GREEN CARDS
+   ---------------------------------------------------------
+   Theory / Practice / Lesson cards
+   ========================================================= */
+
+.dark .bg-green-50 {
+  background-color: #153126 !important;
+}
+
+.dark .bg-green-100 {
+  background-color: #1b3b2d !important;
+}
+
+.dark .border-green-200 {
+  border-color: #2b6449 !important;
+}
+
+.dark .text-green-700 {
+  color: #6ee09a !important;
+}
+
+.dark .text-green-800 {
+  color: #8ae8ac !important;
+}
+
+
+/* =========================================================
+   YELLOW / TIPS
+   ========================================================= */
+
+.dark .bg-yellow-50 {
+  background-color: #302c17 !important;
+}
+
+.dark .bg-yellow-100 {
+  background-color: #3b3518 !important;
+}
+
+.dark .border-yellow-200 {
+  border-color: #6d6022 !important;
+}
+
+.dark .text-yellow-700 {
+  color: #f0d76d !important;
+}
+
+.dark .text-yellow-800 {
+  color: #f5df83 !important;
+}
+
+
+/* =========================================================
+   BLUE / SUMMARY / FORMULA
+   ========================================================= */
+
+.dark .bg-blue-50 {
+  background-color: #162b3a !important;
+}
+
+.dark .bg-blue-100 {
+  background-color: #1b3548 !important;
+}
+
+.dark .border-blue-200 {
+  border-color: #2d5873 !important;
+}
+
+.dark .text-blue-700 {
+  color: #79c7ff !important;
+}
+
+.dark .text-blue-800 {
+  color: #9bd6ff !important;
+}
+
+
+/* =========================================================
+   PURPLE / OFFICE EXAMPLE
+   ========================================================= */
+
+.dark .bg-purple-50 {
+  background-color: #2a2036 !important;
+}
+
+.dark .bg-purple-100 {
+  background-color: #352845 !important;
+}
+
+.dark .border-purple-200 {
+  border-color: #594173 !important;
+}
+
+.dark .text-purple-700 {
+  color: #d2a9ff !important;
+}
+
+.dark .text-purple-800 {
+  color: #dfbdff !important;
+}
+
+
+/* =========================================================
+   RED
+   ========================================================= */
+
+.dark .bg-red-50 {
+  background-color: #351c20 !important;
+}
+
+.dark .border-red-200 {
+  border-color: #663238 !important;
+}
+
+.dark .text-red-600 {
+  color: #ff8d96 !important;
+}
+
+
+/* =========================================================
+   GRAY BUTTON / PREVIOUS LESSON
+   ========================================================= */
+
+.dark .bg-gray-500 {
+  background-color: #52645a !important;
+}
+
+.dark .bg-slate-200 {
+  background-color: #263b31 !important;
+  color: #edf8f1 !important;
+}
+
+.dark .bg-slate-300 {
+  background-color: #314b3e !important;
+}
+
+.dark .text-slate-700 {
+  color: #d2e6d9 !important;
+}
+
+
+/* =========================================================
+   LESSON PAGE — SPECIAL FIXES
+   ========================================================= */
+
+/* Main lesson cards */
+
+.dark .shadow-lg,
+.dark .shadow-xl,
+.dark .shadow-2xl {
+  --tw-shadow-color: rgba(0, 0, 0, 0.35);
+}
+
+
+/* Table */
+
+.dark table {
+  color: #dceee3;
+}
+
+.dark th {
+  color: #ffffff;
+}
+
+.dark td {
+  border-color: #294235;
+}
+
+.dark tr:hover td {
+  background-color: #193127;
+}
+
+
+/* Code block */
+
+.dark .bg-slate-900 {
+  background-color: #07100b !important;
+}
+
+
+/* =========================================================
+   PRACTICE MISSION
+   ========================================================= */
+
+.dark .bg-emerald-50 {
+  background-color: #123126 !important;
+}
+
+.dark .border-emerald-200 {
+  border-color: #286047 !important;
+}
+
+.dark .text-emerald-700 {
+  color: #72dda0 !important;
+}
+
+.dark .text-emerald-800 {
+  color: #91eab5 !important;
+}
+
+
+/* Mission task cards */
+
+.dark .border-green-100 {
+  border-color: #28553f !important;
+}
+
+
+/* Challenge */
+
+.dark .bg-amber-50 {
+  background-color: #302a15 !important;
+}
+
+.dark .border-amber-200 {
+  border-color: #6b5a20 !important;
+}
+
+.dark .text-amber-700 {
+  color: #efd56b !important;
+}
+
+.dark .text-amber-800 {
+  color: #f5df83 !important;
+}
+
+
+/* =========================================================
+   NAVIGATION BUTTONS
+   ========================================================= */
+
+.dark .hover\:bg-slate-300:hover {
+  background-color: #314b3e !important;
+}
+
+
+/* =========================================================
+   DISABLED BUTTON
+   ========================================================= */
+
+.dark .cursor-not-allowed {
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   TRANSITIONS
+   ========================================================= */
+
+body,
+.bg-white,
+.bg-slate-50,
+.bg-slate-100,
+.bg-green-50,
+.bg-blue-50,
+.bg-yellow-50,
+.bg-purple-50 {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
