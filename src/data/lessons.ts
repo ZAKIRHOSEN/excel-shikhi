@@ -676,15 +676,15 @@ export const lessons: Lesson[] = [
   ],
 
   practice: [
-    "Employee List-এর Header তৈরি করুন।",
-    "Header-গুলো Bold করুন।",
-    "Header-এর Background Color পরিবর্তন করুন।",
-    "Name ও Department Column-এর Alignment ঠিক করুন।",
-    "Joining Date-এর জন্য Date Format ব্যবহার করুন।",
-    "পুরো Data Table-এ Border দিন।",
-    "বড় লেখা থাকলে Wrap Text ব্যবহার করুন।",
-    "Sheet-এর Title সুন্দরভাবে তৈরি করুন।",
-    "Title-এর জন্য Merge & Center ব্যবহার করুন।"
+    "প্রথম Row-এ Header লিখুন: Employee ID, Name, Department, Joining Date, Salary।",
+    "Header সেলগুলো Select করে Home → Font group-এর B (Bold) button-এ ক্লিক করুন।",
+    "Header সেলগুলো Select করে Home → Fill Color (রঙের বালতি আইকন) থেকে একটি হালকা রঙ নির্বাচন করুন।",
+    "Name ও Department Column Select করে Home → Alignment group থেকে Center-এ ক্লিক করুন।",
+    "Joining Date Column Select করে Home → Number Format dropdown থেকে Date নির্বাচন করুন।",
+    "পুরো Data Table Select করে Home → Borders (সীমানা আইকন) → All Borders দিন।",
+    "বড় লেখা থাকলে সেই সেলগুলো Select করে Home → Alignment → Wrap Text-এ ক্লিক করুন।",
+    "Table-এর উপরে Title লিখুন (যেমন: Employee Information) এবং সেটি সুন্দরভাবে সাজান।",
+    "Title-এর জন্য প্রয়োজনীয় সেলগুলো Select করে Home → Merge & Center button-এ ক্লিক করুন।"
   ],
 
   practiceData: {
@@ -852,6 +852,18 @@ export const lessons: Lesson[] = [
         "Font Color",
         "Italic",
         "Underline"
+      ],
+
+      answer: 0
+    },
+    {
+      question: "আপনাকে একটি Employee List-এর Header গুলো বড় ও স্পষ্ট করতে হবে এবং পুরো Table-এ লাইন দিতে হবে। সঠিক পদ্ধতি কোনটি?",
+
+      options: [
+        "Header Bold করা এবং Table-এ All Borders প্রয়োগ করা",
+        "সব Data একই Cell-এ লিখে ফেলা",
+        "Header Delete করে দেওয়া",
+        "Workbook-এর রঙ পরিবর্তন করা"
       ],
 
       answer: 0
