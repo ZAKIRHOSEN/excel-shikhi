@@ -392,15 +392,15 @@ export const lessons: Lesson[] = [
   ],
 
   practice: [
-    "একটি নতুন Excel Workbook তৈরি করুন।",
-    "বর্তমান Sheet-এর নাম January করুন।",
-    "আরও দুইটি Sheet তৈরি করুন।",
-    "দ্বিতীয় Sheet-এর নাম February করুন।",
-    "তৃতীয় Sheet-এর নাম March করুন।",
-    "January Sheet-এর একটি Copy তৈরি করুন।",
-    "একটি Sheet অন্য অবস্থানে Move করুন।",
-    "একটি অপ্রয়োজনীয় Sheet Delete করুন।",
-    "January, February এবং March Sheet-এর Tab Color পরিবর্তন করুন।"
+    "নতুন একটি Excel Workbook খুলুন (File → New বা Ctrl + N)।",
+    "নিচের Sheet Tab-এ double-click করুন (অথবা Right Click → Rename) এবং বর্তমান Sheet-এর নাম January রাখুন।",
+    "নিচের দিকে + (Insert Worksheet) button-এ ক্লিক করে আরও দুইটি নতুন Sheet তৈরি করুন।",
+    "দ্বিতীয় Sheet-এর Tab-এ double-click করুন (বা Right Click → Rename) এবং নাম February রাখুন।",
+    "তৃতীয় Sheet-এর Tab-এ double-click করে নাম March রাখুন।",
+    "January Sheet Tab-এ Right Click → Move or Copy করে Create a copy টিক দিয়ে OK দিন।",
+    "কোনো Sheet Tab-এ Right Click → Move or Copy করে desired position নির্বাচন করে সেটি Move করুন।",
+    "অপ্রয়োজনীয় একটি Sheet Tab-এ Right Click → Delete করে সেটি মুছে ফেলুন।",
+    "January, February ও March Sheet-এর Tab-এ Right Click → Tab Color দিয়ে ভিন্ন রঙ নির্বাচন করুন।"
   ],
 
   practiceData: {
@@ -563,6 +563,16 @@ export const lessons: Lesson[] = [
         "Chart"
       ],
 
+      answer: 0
+    },
+    {
+      question: "Garments Company-তে January, February ও March মাসের Sales আলাদা আলাদা রাখতে হবে। সবচেয়ে সঠিক পদ্ধতি কোনটি?",
+      options: [
+        "একই Excel File (Workbook)-এর ভিতরে আলাদা তিনটি Worksheet তৈরি করা",
+        "তিনটি আলাদা Excel File খোলা",
+        "সব Data একটি Sheet-এ এক কলামে লিখে রাখা",
+        "Workbook-টি Delete করে দেওয়া"
+      ],
       answer: 0
     }
   ]

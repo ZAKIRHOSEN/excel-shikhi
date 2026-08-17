@@ -480,6 +480,115 @@ const handleComplete = () => {
 
         </div>
 
+        {/* Practical / Guided Exercise (practiceData) */}
+
+        {lesson.practiceData && (
+          <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+
+            <h2 className="mb-8 text-3xl font-bold text-slate-800">
+              🧩 প্র্যাকটিক্যাল অনুশীলন
+            </h2>
+
+            <h3 className="mb-3 text-2xl font-bold text-green-700">
+              {lesson.practiceData.title}
+            </h3>
+
+            <p className="mb-8 leading-9 text-slate-700">
+              {lesson.practiceData.description}
+            </p>
+
+            {/* Sample Data Table */}
+            <h3 className="mb-5 text-2xl font-bold text-slate-800">
+              📊 নমুনা ডেটা
+            </h3>
+
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[480px] border-collapse text-left text-slate-700">
+                <thead>
+                  <tr>
+                    {lesson.practiceData.headers.map((header, index) => (
+                      <th
+                        key={index}
+                        className="border border-slate-200 bg-slate-100 px-4 py-3 font-semibold"
+                      >
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {lesson.practiceData.rows.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      {row.map((cell, cellIndex) => (
+                        <td
+                          key={cellIndex}
+                          className="border border-slate-200 px-4 py-3"
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Missions */}
+            <h3 className="mb-5 mt-10 text-2xl font-bold text-slate-800">
+              🎯 মিশন
+            </h3>
+
+            <div className="space-y-8">
+              {lesson.practiceData.missions.map((mission, index) => (
+                <div
+                  key={index}
+                  className="rounded-3xl border border-green-200 bg-green-50 p-7"
+                >
+                  <h4 className="mb-4 text-xl font-bold text-green-700">
+                    {mission.title}
+                  </h4>
+
+                  <div className="mb-5">
+                    <span className="font-semibold text-slate-800">📖 গল্প:</span>
+                    <p className="mt-2 leading-8 text-slate-700">
+                      {mission.story}
+                    </p>
+                  </div>
+
+                  <div className="mb-5">
+                    <span className="font-semibold text-slate-800">📌 নির্দেশনা:</span>
+                    <p className="mt-2 leading-8 text-slate-700">
+                      {mission.instruction}
+                    </p>
+                  </div>
+
+                  <div className="mb-5">
+                    <span className="font-semibold text-slate-800">✅ করণীয়:</span>
+                    <ul className="mt-3 space-y-2">
+                      {mission.tasks.map((task, taskIndex) => (
+                        <li
+                          key={taskIndex}
+                          className="rounded-xl border border-green-200 bg-white px-4 py-3 leading-8 text-slate-700"
+                        >
+                          {task}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <span className="font-semibold text-slate-800">🔥 চ্যালেঞ্জ:</span>
+                    <p className="mt-2 leading-8 text-slate-700">
+                      {mission.challenge}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        )}
+
         {/* PDF Notes */}
 
         <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
