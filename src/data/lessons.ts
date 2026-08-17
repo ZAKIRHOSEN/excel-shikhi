@@ -1011,12 +1011,12 @@ export const lessons: Lesson[] = [
   ],
 
   practice: [
-    "A1 এবং B1-এ দুটি সংখ্যা লিখে যোগ করুন।",
-    "A2 এবং B2-এর মধ্যে বিয়োগ করুন।",
-    "A3 এবং B3-এর সংখ্যা গুণ করুন।",
-    "A4 এবং B4-এর সংখ্যা ভাগ করুন।",
-    "একটি Salary হিসাব তৈরি করুন।",
-    "একটি Product Sales হিসাব তৈরি করুন।"
+    "A1 ও B1-এ দুটি সংখ্যা লিখুন। যে Cell-এ যোগফল চান সেখানে =A1+B1 লিখে Enter চাপুন।",
+    "A2 ও B2-এ সংখ্যা লিখুন। Result Cell-এ =A2-B2 লিখে Enter চাপুন।",
+    "A3 ও B3-এ সংখ্যা লিখুন। Result Cell-এ =A3*B3 লিখে Enter চাপুন।",
+    "A4 ও B4-এ সংখ্যা লিখুন। Result Cell-এ =A4/B4 লিখে Enter চাপুন।",
+    "Basic Salary ও Allowance আলাদা দুটি Cell-এ লিখুন, তারপর Total Salary Cell-এ =Cell1+Cell2 (যেমন =B2+C2) লিখে Enter চাপুন।",
+    "Quantity ও Unit Price আলাদা দুটি Cell-এ লিখুন, তারপর Total Sales Cell-এ =Cell1*Cell2 (যেমন =B2*C2) লিখে Enter চাপুন।"
   ],
 
   practiceData: {
@@ -1203,6 +1203,19 @@ export const lessons: Lesson[] = [
       ],
 
       answer: 0
+    },
+
+    {
+      question: "একটি Cell-এ =B2*C2 Formula লেখা আছে। যদি B2 = 10 এবং C2 = 500 হয়, তবে Excel কত Result দেখাবে?",
+
+      options: [
+        "510",
+        "5000",
+        "500",
+        "50"
+      ],
+
+      answer: 1
     }
   ]
 },
