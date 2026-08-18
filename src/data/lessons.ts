@@ -1650,7 +1650,9 @@ export const lessons: Lesson[] = [
     "👥 Employee Count — Employee List-এ মোট কতজন Employee আছে তা বের করা।",
     "💰 Salary Count — কতজন Employee-এর Salary Entry হয়েছে তা বের করা।",
     "📋 Attendance — কতজন Employee Present বা Absent তা গণনা করা।",
-    "📊 Sales Analysis — কতটি Sale ৩০,০০০ টাকার বেশি হয়েছে তা বের করা।"
+    "📊 Sales Analysis — কতটি Sale ৩০,০০০ টাকার বেশি হয়েছে তা বের করা।",
+    "📉 Low Salary — কম Salary থাকা Employee গণনা করা (COUNTIF দিয়ে < চিহ্ন ব্যবহার)।",
+    "🏷 Department Count — নির্দিষ্ট Department বা Status গণনা করা (সরাসরি Text দিয়ে = মিলানো)।"
   ],
 
   questions: [
@@ -1700,10 +1702,10 @@ export const lessons: Lesson[] = [
   ],
 
   practice: [
-    "Employee ID-এর মোট Number Count করুন।",
+    "Employee ID-এর Non-empty Cell Count করতে A2:A9 Range নির্বাচন করে =COUNTA(A2:A9) লিখুন এবং Enter চাপুন।",
     "Employee Name-এর মোট Non-empty Cell Count করুন।",
     "Salary ৩০,০০০ টাকার বেশি এমন Employee Count করুন।",
-    "Sales ৫০,০০০ টাকার বেশি এমন Order Count করুন।",
+    "Sales Department-এর Employee Count করতে =COUNTIF(C2:C9,\"Sales\") লিখুন এবং Enter চাপুন।",
     "Present Employee-এর সংখ্যা Count করুন।"
   ],
 
@@ -1805,7 +1807,7 @@ export const lessons: Lesson[] = [
           "COUNT, COUNTA এবং COUNTIF—তিনটি Function ব্যবহার করে Data বিশ্লেষণ করুন।",
 
         tasks: [
-          "Employee ID-এর Number Count করুন।",
+          "Employee ID-এর Non-empty Cell Count করতে =COUNTA(A2:A9) লিখুন এবং Enter চাপুন।",
           "Employee Name-এর Non-empty Cell Count করুন।",
           "৩০,০০০-এর বেশি Salary Count করুন।",
           "Present Employee Count করুন।",
@@ -1892,6 +1894,11 @@ export const lessons: Lesson[] = [
         "=AVERAGE(A1:A20)"
       ],
 
+      answer: 0
+    },
+    {
+      question: "নিচের Employee Salary-গুলো দেওয়া আছে: 28000, 35000, 30000, 45000, 26000, 38000, 32000, 29000। =COUNTIF(D2:D9,\">30000\") Formula দিলে Excel কত Result দেখাবে?",
+      options: ["৪", "৫", "৩", "৬"],
       answer: 0
     }
   ]
