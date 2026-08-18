@@ -2045,12 +2045,12 @@ export const lessons: Lesson[] = [
   ],
 
   practice: [
-    '=LEFT("EMP-2026",3) ব্যবহার করুন।',
-    '=RIGHT("EMP-2026",4) ব্যবহার করুন।',
-    '=MID("EMP-2026-SLS",5,4) ব্যবহার করুন।',
-    '=LEN("EMP-2026") ব্যবহার করে Character Count করুন।',
-    "Employee ID থেকে Department Code বের করুন।",
-    "Invoice Number থেকে Year বের করুন।"
+    "একটি ফাঁকা Cell নির্বাচন করে =LEFT(\"EMP-2026\",3) লিখুন এবং Enter চাপুন।",
+    "একটি ফাঁকা Cell নির্বাচন করে =RIGHT(\"EMP-2026\",4) লিখুন এবং Enter চাপুন।",
+    "একটি ফাঁকা Cell নির্বাচন করে =MID(\"EMP-2026-SLS\",5,4) লিখুন এবং Enter চাপুন।",
+    "একটি ফাঁকা Cell নির্বাচন করে =LEN(\"EMP-2026\") লিখুন এবং Enter চাপুন।",
+    "Employee ID থেকে Department Code বের করতে A2 Cell নির্বাচন করে =MID(A2,10,3) লিখুন এবং Enter চাপুন।",
+    "Employee ID থেকে Year (2026) বের করতে A2 Cell নির্বাচন করে =MID(A2,5,4) লিখুন এবং Enter চাপুন।"
   ],
 
   practiceData: {
