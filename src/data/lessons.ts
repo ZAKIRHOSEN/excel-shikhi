@@ -2405,12 +2405,12 @@ export const lessons: Lesson[] = [
   ],
 
   practice: [
-    "=TODAY() লিখে আজকের Date দেখুন।",
-    "=NOW() লিখে বর্তমান Date ও Time দেখুন।",
-    "=DATE(2026,8,9) দিয়ে একটি Date তৈরি করুন।",
-    "Joining Date থেকে Year বের করুন।",
-    "Invoice Date থেকে Month বের করুন।",
-    "Delivery Date থেকে Day বের করুন।"
+    "একটি ফাঁকা Cell নির্বাচন করে =TODAY() লিখুন এবং Enter চাপুন।",
+    "একটি ফাঁকা Cell নির্বাচন করে =NOW() লিখুন এবং Enter চাপুন।",
+    "একটি ফাঁকা Cell নির্বাচন করে =DATE(2026,8,9) লিখুন এবং Enter চাপুন।",
+    "Joining Date থেকে Year বের করতে C2 Cell নির্বাচন করে =YEAR(C2) লিখুন এবং Enter চাপুন।",
+    "Invoice Date থেকে Month বের করতে D2 Cell নির্বাচন করে =MONTH(D2) লিখুন এবং Enter চাপুন।",
+    "Joining Date থেকে Day বের করতে C2 Cell নির্বাচন করে =DAY(C2) লিখুন এবং Enter চাপুন।"
   ],
 
   practiceData: {
@@ -2506,16 +2506,16 @@ export const lessons: Lesson[] = [
         title: "Bonus Mission — Date Detective 🕵️",
 
         story:
-          "Manager একটি নির্দিষ্ট Date দিয়েছেন। এখন সেই Date-এর Year, Month এবং Day আলাদা করে দেখাতে হবে।",
+          "আমাদের কাছে Employee-দের Joining Date আছে। এখন সেই Date-এর Year, Month এবং Day আলাদা করে দেখাতে হবে।",
 
         instruction:
           "YEAR, MONTH এবং DAY—তিনটি Function ব্যবহার করুন।",
 
         tasks: [
-          "একটি Date Cell নির্বাচন করুন।",
-          "=YEAR(A2) দিয়ে Year বের করুন।",
-          "=MONTH(A2) দিয়ে Month বের করুন।",
-          "=DAY(A2) দিয়ে Day বের করুন।",
+          "Joining Date Cell (C2) নির্বাচন করুন।",
+          "=YEAR(C2) দিয়ে Year বের করুন।",
+          "=MONTH(C2) দিয়ে Month বের করুন।",
+          "=DAY(C2) দিয়ে Day বের করুন।",
           "তিনটি Result Compare করুন।"
         ],
 
@@ -2601,6 +2601,11 @@ export const lessons: Lesson[] = [
       ],
 
       answer: 1
+    },
+    {
+      question: "Joining Date 2022-01-15 থেকে =YEAR(C2) Formula দিলে Excel কত Result দেখাবে?",
+      options: ["2022", "1", "15", "2022-01-15"],
+      answer: 0
     }
   ]
 },
@@ -3923,7 +3928,7 @@ export const lessons: Lesson[] = [
   formulas: [
     {
       name: "VLOOKUP — Employee Name",
-      syntax: "=VLOOKUP(A2,D2:G20,2,FALSE)",
+      syntax: "=VLOOKUP(H2,A2:D20,2,FALSE)",
       explanation:
         "Lookup Value অনুযায়ী Table থেকে নির্দিষ্ট Column-এর তথ্য ফিরিয়ে আনে।",
 
@@ -4264,22 +4269,22 @@ export const lessons: Lesson[] = [
   formulas: [
     {
       name: "HLOOKUP — Sales",
-      syntax: "=HLOOKUP(B1,A1:F5,3,FALSE)",
+      syntax: "=HLOOKUP(B1,A1:G5,2,FALSE)",
       explanation:
         "উপরের Row-তে Lookup Value খুঁজে নির্দিষ্ট Row থেকে Result ফিরিয়ে আনে।",
 
       example:
-        "=HLOOKUP(B1,A1:F5,3,FALSE)"
+        "=HLOOKUP(B1,A1:G5,2,FALSE)"
     },
 
     {
-      name: "HLOOKUP — Result",
-      syntax: "=HLOOKUP(C1,A1:H8,4,FALSE)",
+      name: "HLOOKUP — Orders",
+      syntax: "=HLOOKUP(C1,A1:G5,4,FALSE)",
       explanation:
         "Horizontal Table থেকে Lookup Value অনুযায়ী নির্দিষ্ট Row-এর তথ্য বের করে।",
 
       example:
-        "=HLOOKUP(C1,A1:H8,4,FALSE)"
+        "=HLOOKUP(C1,A1:G5,4,FALSE)"
     }
   ],
 
@@ -4616,7 +4621,7 @@ export const lessons: Lesson[] = [
 
     {
       name: "INDEX + MATCH — Employee Salary",
-      syntax: "=INDEX(C2:C20,MATCH(A2,B2:B20,0))",
+      syntax: "=INDEX(D2:D20,MATCH(H2,A2:A20,0))",
       explanation:
         "MATCH দিয়ে Employee-এর Position খুঁজে INDEX দিয়ে সেই Position-এর Salary বের করে।",
 
@@ -4929,12 +4934,12 @@ export const lessons: Lesson[] = [
   formulas: [
     {
       name: "IF — Pass / Fail",
-      syntax: '=IF(B2>=40,"Pass","Fail")',
+      syntax: '=IF(E2>=80,"Pass","Fail")',
       explanation:
-        "B2-এর Mark 40 বা তার বেশি হলে Pass এবং তার কম হলে Fail দেখায়।",
+        "E2-এর Attendance 80 বা তার বেশি হলে Pass এবং তার কম হলে Fail দেখায়।",
 
       example:
-        '=IF(B2>=40,"Pass","Fail")'
+        '=IF(E2>=80,"Pass","Fail")'
     },
 
     {
@@ -4949,19 +4954,19 @@ export const lessons: Lesson[] = [
 
     {
       name: "IF — Eligibility",
-      syntax: '=IF(D2>=18,"Eligible","Not Eligible")',
+      syntax: '=IF(C2>=50000,"Eligible","Not Eligible")',
       explanation:
-        "Age 18 বা তার বেশি হলে Eligible এবং কম হলে Not Eligible দেখায়।",
+        "C2-এর Sales 50,000 বা তার বেশি হলে Eligible এবং কম হলে Not Eligible দেখায়।",
 
       example:
-        '=IF(D2>=18,"Eligible","Not Eligible")'
+        '=IF(C2>=50000,"Eligible","Not Eligible")'
     }
   ],
 
   examples: [
-    "🎓 Exam Result — Mark অনুযায়ী Pass বা Fail দেখানো।",
+    "🎓 Attendance Status — Attendance অনুযায়ী Pass বা Fail দেখানো।",
     "💰 Sales Target — Target পূরণ হয়েছে কিনা দেখানো।",
-    "👤 Employee Status — Performance অনুযায়ী Eligible বা Not Eligible দেখানো।",
+    "👤 Employee Status — Sales অনুযায়ী Eligible বা Not Eligible দেখানো।",
     "📦 Stock Status — Stock কম হলে Reorder এবং পর্যাপ্ত হলে Available দেখানো।",
     "⏰ Attendance — Attendance নির্দিষ্ট সীমার নিচে হলে Warning দেখানো।"
   ],
@@ -5004,9 +5009,9 @@ export const lessons: Lesson[] = [
     },
 
     {
-      question: "B2-এর Value 50 হলে =IF(B2>=40,\"Pass\",\"Fail\") কী দেখাবে?",
+      question: "E2-এর Attendance 90 হলে =IF(E2>=80,\"Pass\",\"Fail\") কী দেখাবে?",
       answer:
-        "Pass দেখাবে, কারণ 50 হলো 40-এর চেয়ে বেশি।"
+        "Pass দেখাবে, কারণ 90 হলো 80-এর চেয়ে বেশি।"
     }
   ],
 
@@ -5020,10 +5025,10 @@ export const lessons: Lesson[] = [
   ],
 
   practice: [
-    "Mark 40 বা তার বেশি হলে Pass এবং কম হলে Fail দেখান।",
+    "Attendance 80 বা তার বেশি হলে Pass এবং কম হলে Fail দেখান।",
     "Sales 50,000 বা তার বেশি হলে Target Achieved দেখান।",
     "Stock 20-এর কম হলে Reorder দেখান।",
-    "Age 18 বা তার বেশি হলে Eligible দেখান।",
+    "Sales 50,000 বা তার বেশি হলে Eligible দেখান।",
     "Attendance 80%-এর কম হলে Warning দেখান।",
     "নিজে একটি নতুন IF Decision তৈরি করুন।"
   ],
@@ -5172,7 +5177,7 @@ export const lessons: Lesson[] = [
     },
 
     {
-      question: '=IF(B2>=40,"Pass","Fail")-এ B2>=40 কী?', 
+      question: '=IF(E2>=80,"Pass","Fail")-এ E2>=80 কী?', 
 
       options: [
         "Logical Test",
@@ -5271,44 +5276,44 @@ export const lessons: Lesson[] = [
   formulas: [
     {
       name: "AND — দুই শর্ত",
-      syntax: "=AND(B2>=50000,C2>=80)",
+      syntax: "=AND(C2>=50000,D2>=80)",
       explanation:
-        "B2 কমপক্ষে 50,000 এবং C2 কমপক্ষে 80 হলে TRUE দেখাবে।",
+        "C2 কমপক্ষে 50,000 এবং D2 কমপক্ষে 80 হলে TRUE দেখাবে।",
 
       example:
-        "=AND(B2>=50000,C2>=80)"
+        "=AND(C2>=50000,D2>=80)"
     },
 
     {
       name: "OR — যেকোনো একটি শর্ত",
-      syntax: "=OR(B2<50000,C2<80)",
+      syntax: "=OR(C2<50000,D2<80)",
       explanation:
-        "B2 50,000-এর কম অথবা C2 80-এর কম হলে TRUE দেখাবে।",
+        "C2 50,000-এর কম অথবা D2 80-এর কম হলে TRUE দেখাবে।",
 
       example:
-        "=OR(B2<50000,C2<80)"
+        "=OR(C2<50000,D2<80)"
     },
 
     {
       name: "IF + AND",
       syntax:
-        '=IF(AND(B2>=50000,C2>=80),"Good Performer","Needs Improvement")',
+        '=IF(AND(C2>=50000,D2>=80),"Good Performer","Needs Improvement")',
       explanation:
         "Sales এবং Attendance—দুই শর্তই পূরণ হলে Good Performer দেখাবে।",
 
       example:
-        '=IF(AND(B2>=50000,C2>=80),"Good Performer","Needs Improvement")'
+        '=IF(AND(C2>=50000,D2>=80),"Good Performer","Needs Improvement")'
     },
 
     {
       name: "IF + OR",
       syntax:
-        '=IF(OR(B2<50000,C2<80),"Needs Attention","Good")',
+        '=IF(OR(C2<50000,D2<80),"Needs Attention","Good")',
       explanation:
         "Sales অথবা Attendance-এর যেকোনো একটি শর্ত খারাপ হলে Needs Attention দেখাবে।",
 
       example:
-        '=IF(OR(B2<50000,C2<80),"Needs Attention","Good")'
+        '=IF(OR(C2<50000,D2<80),"Needs Attention","Good")'
     }
   ],
 
@@ -5358,7 +5363,7 @@ export const lessons: Lesson[] = [
     },
 
     {
-      question: "Sales 60,000 এবং Attendance 90 হলে =AND(B2>=50000,C2>=80) কী দেখাবে?",
+      question: "Sales 60,000 এবং Attendance 90 হলে =AND(C2>=50000,D2>=80) কী দেখাবে?",
       answer:
         "TRUE দেখাবে, কারণ দুইটি শর্তই সত্য।"
     },
@@ -5560,7 +5565,7 @@ export const lessons: Lesson[] = [
 
     {
       question:
-        '=IF(AND(B2>=50000,C2>=80),"Good","Bad")-এ Good কখন দেখাবে?',
+        '=IF(AND(C2>=50000,D2>=80),"Good","Bad")-এ Good কখন দেখাবে?',
 
       options: [
         "Sales এবং Attendance দুটোই শর্ত পূরণ করলে",
@@ -5647,7 +5652,7 @@ export const lessons: Lesson[] = [
   formulas: [
     {
       name: "COUNTIF — Department Count",
-      syntax: '=COUNTIF(B2:B20,"Sales")',
+      syntax: '=COUNTIF(C2:C20,"Sales")',
       explanation:
         "Department Range-এর মধ্যে Sales কতবার আছে তা গুনে দেয়।",
 
@@ -5657,7 +5662,7 @@ export const lessons: Lesson[] = [
 
     {
       name: "SUMIF — Department Sales",
-      syntax: '=SUMIF(B2:B20,"Sales",D2:D20)',
+      syntax: '=SUMIF(C2:C20,"Sales",E2:E20)',
       explanation:
         "যেসব Row-তে Department Sales, সেই Row-এর Sales Value যোগ করে।",
 
@@ -5672,7 +5677,7 @@ export const lessons: Lesson[] = [
         "Salary Range-এর মধ্যে 40,000-এর বেশি Salary কতজন পান তা গুনে দেয়।",
 
       example:
-        '=COUNTIF(E2:E20,">40000")'
+        '=COUNTIF(D2:D20,">40000")'
     },
 
     {
@@ -5682,7 +5687,7 @@ export const lessons: Lesson[] = [
         "40,000-এর বেশি Salary পাওয়া Employee-দের Salary যোগ করে।",
 
       example:
-        '=SUMIF(E2:E20,">40000",E2:E20)'
+        '=SUMIF(D2:D20,">40000",D2:D20)'
     }
   ],
 
@@ -5726,15 +5731,15 @@ export const lessons: Lesson[] = [
     },
 
     {
-      question: 'COUNTIF(B2:B20,"Sales") কী বের করে?',
+      question: 'COUNTIF(C2:C20,"Sales") কী বের করে?',
       answer:
-        "B2:B20 Range-এর মধ্যে Sales কতবার আছে তা বের করে।"
+        "C2:C20 Range-এর মধ্যে Sales কতবার আছে তা বের করে।"
     },
 
     {
-      question: 'SUMIF(B2:B20,"Sales",D2:D20) কী করে?',
+      question: 'SUMIF(C2:C20,"Sales",E2:E20) কী করে?',
       answer:
-        "B2:B20-এ যেসব Row-তে Sales আছে, সেই Row-এর D Column-এর Value যোগ করে।"
+        "C2:C20-এ যেসব Row-তে Sales আছে, সেই Row-এর E Column-এর Value যোগ করে।"
     },
 
     {
@@ -5918,7 +5923,7 @@ export const lessons: Lesson[] = [
     },
 
     {
-      question: 'COUNTIF(B2:B20,"Sales") কী বের করে?',
+      question: 'COUNTIF(C2:C20,"Sales") কী বের করে?',
 
       options: [
         "Sales কতবার আছে",
@@ -5931,7 +5936,7 @@ export const lessons: Lesson[] = [
     },
 
     {
-      question: 'SUMIF(B2:B20,"Sales",D2:D20)-এ B2:B20 কী?',
+      question: 'SUMIF(C2:C20,"Sales",E2:E20)-এ C2:C20 কী?',
 
       options: [
         "Criteria Range",
@@ -6765,7 +6770,7 @@ export const lessons: Lesson[] = [
 
   level: "Advanced",
 
-  title: "VLOOKUP Function",
+  title: "VLOOKUP Refresher & XLOOKUP Compare",
 
   description:
     "Employee ID বা Product Code ব্যবহার করে Excel-এর Table থেকে Name, Department, Salary, Price এবং অন্যান্য তথ্য খুঁজে বের করুন।",
