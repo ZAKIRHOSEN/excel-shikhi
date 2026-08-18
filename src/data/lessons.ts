@@ -1358,12 +1358,12 @@ export const lessons: Lesson[] = [
   ],
 
   practice: [
-    "একটি Student Result Sheet তৈরি করুন।",
-    "SUM ব্যবহার করে Total Marks বের করুন।",
-    "AVERAGE ব্যবহার করে Average Marks বের করুন।",
-    "MIN ব্যবহার করে সবচেয়ে কম Marks বের করুন।",
-    "MAX ব্যবহার করে সবচেয়ে বেশি Marks বের করুন।",
-    "একটি Monthly Sales-এর Total বের করুন।"
+    "A1:F1-এ Headers লিখুন: Student, Bangla, English, Math, Total, Average; তার নিচে ৬ জন Student-এর Bangla, English ও Math Marks যথাক্রমে B, C ও D কলামে লিখুন।",
+    "প্রথম Student-এর Total Cell (E2) নির্বাচন করুন, =SUM(B2:D2) লিখে Enter চাপুন।",
+    "প্রথম Student-এর Average Cell (F2) নির্বাচন করুন, =AVERAGE(B2:D2) লিখে Enter চাপুন।",
+    "Bangla কলামের সবচেয়ে কম Marks-এর Result Cell নির্বাচন করুন, =MIN(B2:B7) লিখে Enter চাপুন।",
+    "Bangla কলামের সবচেয়ে বেশি Marks-এর Result Cell নির্বাচন করুন, =MAX(B2:B7) লিখে Enter চাপুন।",
+    "নতুন G কলামে (G2 থেকে G7) কয়েক মাসের Sales Amount লিখুন, তারপর Total Cell-এ =SUM(G2:G7) লিখুন এবং Enter চাপুন।"
   ],
 
   practiceData: {
@@ -1443,12 +1443,12 @@ export const lessons: Lesson[] = [
           "MIN ও MAX Function ব্যবহার করে Class-এর Highest এবং Lowest Marks বের করুন।",
 
         tasks: [
-          "Bangla Marks-এর সবচেয়ে কম মান বের করুন।",
-          "Bangla Marks-এর সবচেয়ে বেশি মান বের করুন।",
-          "English Marks-এর সবচেয়ে কম মান বের করুন।",
-          "English Marks-এর সবচেয়ে বেশি মান বের করুন।",
-          "Math Marks-এর সবচেয়ে কম মান বের করুন।",
-          "Math Marks-এর সবচেয়ে বেশি মান বের করুন।"
+          "Bangla Marks-এর সবচেয়ে কম মান বের করতে =MIN(B2:B7) Formula ব্যবহার করুন।",
+          "Bangla Marks-এর সবচেয়ে বেশি মান বের করতে =MAX(B2:B7) Formula ব্যবহার করুন।",
+          "English Marks-এর সবচেয়ে কম মান বের করতে =MIN(C2:C7) Formula ব্যবহার করুন।",
+          "English Marks-এর সবচেয়ে বেশি মান বের করতে =MAX(C2:C7) Formula ব্যবহার করুন।",
+          "Math Marks-এর সবচেয়ে কম মান বের করতে =MIN(D2:D7) Formula ব্যবহার করুন।",
+          "Math Marks-এর সবচেয়ে বেশি মান বের করতে =MAX(D2:D7) Formula ব্যবহার করুন।"
         ],
 
         challenge:
@@ -1553,6 +1553,19 @@ export const lessons: Lesson[] = [
       ],
 
       answer: 1
+    },
+
+    {
+      question: "নিচের Bangla Marks-গুলো দেওয়া আছে: 75, 88, 65, 92, 70, 84। =SUM(B2:B7) Formula দিলে Excel কত Result দেখাবে?",
+
+      options: [
+        "474",
+        "464",
+        "394",
+        "484"
+      ],
+
+      answer: 0
     }
   ]
 },
