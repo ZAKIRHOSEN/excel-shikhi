@@ -128,6 +128,17 @@ export default function Quiz() {
 
   const selectedAnswer = answers[currentQuestion];
 
+  // প্রতিটি প্রশ্নের options random order-এ দেখায়, কিন্তু correct answer mapping সংরক্ষণ করে
+  const optionOrder = useMemo(() => {
+    const total = question.options.length;
+    const order = Array.from({ length: total }, (_, i) => i);
+    for (let i = total - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [order[i], order[j]] = [order[j], order[i]];
+    }
+    return order; // order[displayPos] = original option index
+  }, [lesson?.id, currentQuestion, questions.length, question.options.length]);
+
   const calculateScore = () => {
     return questions.reduce((total, question, index) => {
       return total + (answers[index] === question.answer ? 1 : 0);
@@ -320,25 +331,30 @@ export default function Quiz() {
 
           <div className="space-y-4">
 
-            {question.options.map((option, index) => (
+                        {optionOrder.map((originalIndex, displayPos) => {
+              const option = question.options[originalIndex];
+              const isSelected = selectedAnswer === originalIndex;
+              return (
 
               <button
-                key={index}
-                onClick={() => handleSelectAnswer(index)}
+                key={displayPos}
+                onClick={() => handleSelectAnswer(originalIndex)}
                 className={`w-full rounded-2xl border p-5 break-words text-left font-medium transition-all ${
-                  selectedAnswer === index
+                  isSelected
                     ? "border-green-600 bg-green-100 shadow-md"
                     : "border-slate-300 bg-white hover:border-green-500 hover:bg-green-50"
                 }`}
               >
+
                 <span className="mr-3 font-bold">
-                  {String.fromCharCode(65 + index)}.
+                  {String.fromCharCode(65 + displayPos)}.
                 </span>
 
                 {option}
-              </button>
 
-            ))}
+              </button>
+              );
+            })}
 
           </div>
 
