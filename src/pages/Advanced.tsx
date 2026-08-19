@@ -9,7 +9,7 @@ export default function Advanced() {
   return (
     <div className="min-h-screen bg-slate-50">
 
-      <div className="mx-auto max-w-[1700px] px-6 py-10 xl:px-12">
+      <div className="mx-auto max-w-[1700px] px-0 py-10">
 
         <Link
           to="/"
@@ -20,7 +20,7 @@ export default function Advanced() {
 
         {/* Hero */}
 
-        <div className="mt-6 rounded-3xl bg-gradient-to-r from-emerald-800 via-green-700 to-green-500 p-10 text-white shadow-xl">
+        <div className="mt-6 rounded-3xl bg-gradient-to-r from-emerald-800 via-green-700 to-green-500 p-5 sm:p-8 lg:p-10 text-white shadow-xl">
 
           <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-semibold">
             📙 Advanced Course
@@ -110,7 +110,7 @@ export default function Advanced() {
 
 {/* Bottom Banner */}
 
-<div className="mt-12 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 p-10 text-center text-white shadow-xl">
+<div className="mt-12 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 p-5 sm:p-8 lg:p-10 text-center text-white shadow-xl">
 
 <div className="text-6xl">
 🎓
@@ -130,25 +130,25 @@ Dashboard, Power Query এবং Professional Excel Project
 
         {/* Navigation */}
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 
           <Link
             to="/intermediate"
-            className="rounded-2xl border border-slate-300 bg-white px-8 py-4 font-semibold text-slate-700 transition hover:border-green-600 hover:text-green-700"
+            className="rounded-2xl w-full sm:w-auto border border-slate-300 bg-white px-8 py-4 font-semibold text-slate-700 transition hover:border-green-600 hover:text-green-700"
           >
             📘 Intermediate Course
           </Link>
 
           <Link
             to="/dashboard"
-            className="rounded-2xl bg-green-600 px-8 py-4 font-semibold text-white transition hover:bg-green-700"
+            className="rounded-2xl w-full sm:w-auto bg-green-600 px-8 py-4 font-semibold text-white transition hover:bg-green-700"
           >
             📊 Dashboard
           </Link>
 
           <Link
             to="/"
-            className="rounded-2xl bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
+            className="rounded-2xl w-full sm:w-auto bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
           >
             🏠 হোমে ফিরে যান
           </Link>

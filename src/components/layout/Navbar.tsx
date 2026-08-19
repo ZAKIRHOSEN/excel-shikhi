@@ -24,7 +24,7 @@ export default function Navbar() {
             className="h-10 w-10 rounded-xl object-cover shadow"
           />
 
-          <span className="text-xl font-extrabold">
+          <span className="text-lg sm:text-xl font-extrabold">
             {APP_NAME}
           </span>
         </Link>

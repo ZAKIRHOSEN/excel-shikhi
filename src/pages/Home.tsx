@@ -134,7 +134,7 @@ export default function Home() {
 
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-8 py-24">
+        <div className="relative max-w-7xl mx-auto px-0 py-16 sm:py-24">
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -146,7 +146,7 @@ export default function Home() {
 
               </span>
 
-              <h1 className="mt-8 text-6xl font-black leading-tight">
+              <h1 className="mt-8 text-4xl sm:text-5xl lg:text-6xl font-black leading-tight">
 
                 এক্সেল শিখি
 
@@ -160,18 +160,18 @@ export default function Home() {
 
               </p>
 
-              <div className="mt-12 flex flex-wrap gap-5">
+              <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 
               <Link
   to="/beginner"
-  className="inline-flex items-center rounded-2xl bg-green-950 px-8 py-4 font-bold !text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:bg-green-900"
+  className="inline-flex items-center rounded-2xl w-full sm:w-auto bg-green-950 px-8 py-4 font-bold !text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:bg-green-900"
 >
   🚀 শেখা শুরু করুন
 </Link>
 
                 <Link
                   to="/dashboard"
-                  className="inline-flex items-center rounded-2xl border border-white/30 px-8 py-4 font-bold backdrop-blur hover:bg-white/10 transition"
+                  className="inline-flex items-center rounded-2xl w-full sm:w-auto border border-white/30 px-8 py-4 font-bold backdrop-blur hover:bg-white/10 transition"
                 >
                   Dashboard →
                 </Link>
@@ -184,7 +184,7 @@ export default function Home() {
 
               <div className="rounded-[32px] bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl p-8">
 
-                <div className="bg-white rounded-3xl p-8 w-[430px]">
+                <div className="bg-white rounded-3xl p-8 w-full max-w-[430px]">
 
                   <div className="flex justify-between items-center mb-8">
 
@@ -240,7 +240,7 @@ export default function Home() {
     
         {/* FLOATING STATS */}
 
-<section className="relative -mt-12 z-20 max-w-7xl mx-auto px-8">
+<section className="relative -mt-12 z-20 max-w-7xl mx-auto px-0">
 
 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
 
@@ -288,7 +288,7 @@ export default function Home() {
 
             {/* WHY LEARN EXCEL */}
 
-            <section className="max-w-7xl mx-auto px-8 py-20">
+            <section className="max-w-7xl mx-auto px-0 py-20">
 
 <div className="text-center">
 
@@ -464,7 +464,7 @@ export default function Home() {
 
 {/* PROGRESS & RECENT LESSONS */}
 
-<section className="max-w-7xl mx-auto px-8 pb-24">
+<section className="max-w-7xl mx-auto px-0 pb-24">
 
 <div className="grid lg:grid-cols-2 gap-8">
 

@@ -32,7 +32,7 @@ export default function Intermediate() {
   return (
     <div className="min-h-screen bg-slate-50">
 
-      <div className="mx-auto max-w-[1700px] px-6 py-10 xl:px-12">
+      <div className="mx-auto max-w-[1700px] px-0 py-10">
 
         {/* Home Link */}
 
@@ -46,7 +46,7 @@ export default function Intermediate() {
 
         {/* HERO */}
 
-        <div className="mt-6 rounded-3xl bg-gradient-to-r from-emerald-800 via-green-700 to-green-500 p-10 text-white shadow-xl">
+        <div className="mt-6 rounded-3xl bg-gradient-to-r from-emerald-800 via-green-700 to-green-500 p-5 sm:p-8 lg:p-10 text-white shadow-xl">
 
           <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-semibold">
             📗 Intermediate Course
@@ -192,7 +192,7 @@ export default function Intermediate() {
 
         {/* CONTINUE LEARNING */}
 
-        <div className="mt-12 rounded-3xl bg-gradient-to-r from-green-700 to-emerald-600 p-10 text-white shadow-xl">
+        <div className="mt-12 rounded-3xl bg-gradient-to-r from-green-700 to-emerald-600 p-5 sm:p-8 lg:p-10 text-white shadow-xl">
 
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
 
@@ -218,7 +218,7 @@ export default function Intermediate() {
 
               <Link
                 to="/advanced"
-                className="rounded-2xl bg-white px-8 py-4 font-semibold text-green-700 transition hover:bg-green-50"
+                className="rounded-2xl w-full sm:w-auto bg-white px-8 py-4 font-semibold text-green-700 transition hover:bg-green-50"
               >
                 🚀 Advanced Course →
               </Link>
@@ -227,7 +227,7 @@ export default function Intermediate() {
 
               <Link
                 to={`/lesson/${nextLesson.id}`}
-                className="rounded-2xl bg-white px-8 py-4 font-semibold text-green-700 transition hover:bg-green-50"
+                className="rounded-2xl w-full sm:w-auto bg-white px-8 py-4 font-semibold text-green-700 transition hover:bg-green-50"
               >
                 ▶ পরবর্তী Lesson শুরু করুন →
               </Link>
@@ -241,11 +241,11 @@ export default function Intermediate() {
 
         {/* NAVIGATION */}
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 
           <Link
             to="/advanced"
-            className="rounded-2xl bg-green-600 px-8 py-4 font-semibold text-white transition hover:bg-green-700"
+            className="rounded-2xl w-full sm:w-auto bg-green-600 px-8 py-4 font-semibold text-white transition hover:bg-green-700"
           >
             🚀 Advanced Course
           </Link>
@@ -253,7 +253,7 @@ export default function Intermediate() {
 
           <Link
             to="/dashboard"
-            className="rounded-2xl border border-slate-300 bg-white px-8 py-4 font-semibold text-slate-700 transition hover:border-green-600 hover:text-green-700"
+            className="rounded-2xl w-full sm:w-auto border border-slate-300 bg-white px-8 py-4 font-semibold text-slate-700 transition hover:border-green-600 hover:text-green-700"
           >
             📊 Dashboard
           </Link>
@@ -261,7 +261,7 @@ export default function Intermediate() {
 
           <Link
             to="/"
-            className="rounded-2xl border border-slate-300 bg-white px-8 py-4 font-semibold text-slate-700 transition hover:border-green-600 hover:text-green-700"
+            className="rounded-2xl w-full sm:w-auto border border-slate-300 bg-white px-8 py-4 font-semibold text-slate-700 transition hover:border-green-600 hover:text-green-700"
           >
             🏠 হোমে ফিরে যান
           </Link>

@@ -79,7 +79,7 @@ const handleComplete = () => {
 
     <div className="min-h-screen bg-slate-100">
 
-      <div className="mx-auto max-w-7xl px-5 py-10">
+      <div className="mx-auto max-w-7xl px-0 py-10">
 
         <Link
           to="/"
@@ -90,7 +90,7 @@ const handleComplete = () => {
 
         {/* Hero */}
 
-        <div className="overflow-hidden rounded-[32px] bg-gradient-to-r from-green-700 via-emerald-700 to-green-500 p-10 text-white shadow-2xl">
+        <div className="overflow-hidden rounded-[32px] bg-gradient-to-r from-green-700 via-emerald-700 to-green-500 p-5 sm:p-8 lg:p-10 text-white shadow-2xl">
 
           <div className="mb-6 flex flex-wrap gap-3">
 
@@ -108,7 +108,7 @@ const handleComplete = () => {
 
           </div>
 
-          <h1 className="mb-6 text-5xl font-extrabold leading-tight">
+          <h1 className="mb-6 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
 
             {lesson.title}
 
@@ -192,9 +192,9 @@ const handleComplete = () => {
 
         {/* Introduction */}
 
-        <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+        <div className="mt-8 rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
-          <h2 className="mb-6 text-3xl font-bold text-slate-800">
+          <h2 className="mb-6 text-2xl sm:text-2xl sm:text-3xl font-bold text-slate-800">
 
             📘 ভূমিকা
 
@@ -210,9 +210,9 @@ const handleComplete = () => {
 
                 {/* Theory */}
 
-                <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+                <div className="mt-8 rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
-<h2 className="mb-8 text-3xl font-bold text-slate-800">
+<h2 className="mb-8 text-2xl sm:text-2xl sm:text-3xl font-bold text-slate-800">
   📚 থিওরি
 </h2>
 
@@ -238,9 +238,9 @@ const handleComplete = () => {
 {/* Screenshot */}
 
 {(lesson.screenshots ?? []).length > 0 && (
-<div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+<div className="mt-8 rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
-<h2 className="mb-8 text-3xl font-bold text-slate-800">
+<h2 className="mb-8 text-2xl sm:text-2xl sm:text-3xl font-bold text-slate-800">
   🖼 Screenshot
 </h2>
 
@@ -289,9 +289,9 @@ const handleComplete = () => {
   <>
     {/* Formula */}
 
-    <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+    <div className="mt-8 rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
-    <h2 className="mb-8 text-3xl font-bold text-slate-800">
+    <h2 className="mb-8 text-2xl sm:text-2xl sm:text-3xl font-bold text-slate-800">
       🧮 Formula
     </h2>
 
@@ -340,7 +340,7 @@ const handleComplete = () => {
               {formula.explanation}
             </p>
 
-            <div className="rounded-2xl border bg-white p-5">
+            <div className="rounded-2xl border bg-white p-5 overflow-x-auto break-words">
 
               <h4 className="mb-3 font-bold text-slate-800">
                 Example
@@ -366,9 +366,9 @@ const handleComplete = () => {
 
         {/* Real Office Example */}
 
-        <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+        <div className="mt-8 rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
-          <h2 className="mb-8 text-3xl font-bold text-slate-800">
+          <h2 className="mb-8 text-2xl sm:text-2xl sm:text-3xl font-bold text-slate-800">
             💼 Real Office Example
           </h2>
 
@@ -398,9 +398,9 @@ const handleComplete = () => {
         {/* Questions & Answers */}
 
         {(lesson.questions ?? []).length > 0 && (
-        <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+        <div className="mt-8 rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
-          <h2 className="mb-8 text-3xl font-bold text-slate-800">
+          <h2 className="mb-8 text-2xl sm:text-2xl sm:text-3xl font-bold text-slate-800">
             ❓ প্রশ্ন ও উত্তর
           </h2>
 
@@ -432,9 +432,9 @@ const handleComplete = () => {
 
         {/* Tips */}
 
-        <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+        <div className="mt-8 rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
-          <h2 className="mb-8 text-3xl font-bold text-slate-800">
+          <h2 className="mb-8 text-2xl sm:text-2xl sm:text-3xl font-bold text-slate-800">
             💡 Tips
           </h2>
 
@@ -457,9 +457,9 @@ const handleComplete = () => {
 
         {/* Practice */}
 
-        <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+        <div className="mt-8 rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
-          <h2 className="mb-8 text-3xl font-bold text-slate-800">
+          <h2 className="mb-8 text-2xl sm:text-2xl sm:text-3xl font-bold text-slate-800">
             💻 Practice
           </h2>
 
@@ -483,9 +483,9 @@ const handleComplete = () => {
         {/* Practical / Guided Exercise (practiceData) */}
 
         {lesson.practiceData && (
-          <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+          <div className="mt-8 rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
-            <h2 className="mb-8 text-3xl font-bold text-slate-800">
+            <h2 className="mb-8 text-2xl sm:text-2xl sm:text-3xl font-bold text-slate-800">
               🧩 প্র্যাকটিক্যাল অনুশীলন
             </h2>
 
@@ -503,7 +503,7 @@ const handleComplete = () => {
             </h3>
 
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[480px] border-collapse text-left text-slate-700">
+              <table className="w-full min-w-[360px] border-collapse text-left text-slate-700 text-sm sm:text-base">
                 <thead>
                   <tr>
                     {lesson.practiceData.headers.map((header, index) => (
@@ -591,9 +591,9 @@ const handleComplete = () => {
 
         {/* PDF Notes */}
 
-        <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+        <div className="mt-8 rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
-          <h2 className="mb-8 text-3xl font-bold text-slate-800">
+          <h2 className="mb-8 text-2xl sm:text-2xl sm:text-3xl font-bold text-slate-800">
             📄 PDF Notes
           </h2>
 
@@ -623,9 +623,9 @@ const handleComplete = () => {
 
         {/* Lesson Summary */}
 
-        <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+        <div className="mt-8 rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
-          <h2 className="mb-8 text-3xl font-bold text-slate-800">
+          <h2 className="mb-8 text-2xl sm:text-2xl sm:text-3xl font-bold text-slate-800">
             📖 Lesson Summary
           </h2>
 
@@ -648,18 +648,18 @@ const handleComplete = () => {
 
                 {/* Navigation */}
 
-                <div className="mt-8 rounded-3xl bg-white p-8 shadow-lg">
+                <div className="mt-8 rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
-<h2 className="mb-8 text-3xl font-bold text-slate-800">
+<h2 className="mb-8 text-2xl sm:text-2xl sm:text-3xl font-bold text-slate-800">
   🚀 পরবর্তী ধাপ
 </h2>
 
-<div className="flex flex-wrap gap-4">
+<div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 
 <button
   onClick={handleComplete}
   disabled={completed}
-  className={`rounded-xl px-6 py-3 font-semibold text-white transition ${
+  className={`rounded-xl w-full sm:w-auto px-6 py-3 font-semibold text-white transition ${
     completed
       ? "cursor-not-allowed bg-gray-500"
       : "bg-emerald-600 hover:bg-emerald-700"
@@ -672,7 +672,7 @@ const handleComplete = () => {
 
     <Link
       to={`/lesson/${previousLesson.id}`}
-      className="rounded-xl bg-slate-200 px-6 py-3 font-semibold transition hover:bg-slate-300"
+      className="rounded-xl w-full sm:w-auto bg-slate-200 px-6 py-3 font-semibold transition hover:bg-slate-300"
     >
       ⬅️ Previous Lesson
     </Link>
@@ -683,7 +683,7 @@ const handleComplete = () => {
 
     <Link
       to={`/lesson/${nextLesson.id}`}
-      className="rounded-xl bg-green-600 px-6 py-3 font-semibold text-white transition hover:bg-green-700"
+      className="rounded-xl w-full sm:w-auto bg-green-600 px-6 py-3 font-semibold text-white transition hover:bg-green-700"
     >
       Next Lesson ➜
     </Link>
@@ -693,7 +693,7 @@ const handleComplete = () => {
   {(lesson.quiz ?? []).length > 0 && (
     <Link
       to={`/quiz/${lesson.id}`}
-      className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+      className="rounded-xl w-full sm:w-auto bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
     >
       📝 Start Quiz
     </Link>

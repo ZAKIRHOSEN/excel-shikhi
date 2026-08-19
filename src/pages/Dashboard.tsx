@@ -117,19 +117,19 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-slate-100">
 
-      <div className="mx-auto max-w-7xl px-6 py-10">
+      <div className="mx-auto max-w-7xl px-0 py-10">
 
         {/* =========================================
             HERO
         ========================================= */}
 
-        <div className="overflow-hidden rounded-[32px] bg-gradient-to-r from-emerald-800 via-green-700 to-green-500 p-10 text-white shadow-2xl">
+        <div className="overflow-hidden rounded-[32px] bg-gradient-to-r from-emerald-800 via-green-700 to-green-500 p-5 sm:p-8 lg:p-10 text-white shadow-2xl">
 
           <span className="inline-flex rounded-full bg-white/20 px-4 py-2 text-sm font-semibold backdrop-blur">
             👋 Welcome Back
           </span>
 
-          <h1 className="mt-6 text-5xl font-extrabold">
+          <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-extrabold">
             আপনার Excel Dashboard
           </h1>
 
@@ -201,7 +201,7 @@ export default function Dashboard() {
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
 
-          <div className="rounded-3xl bg-white p-8 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+          <div className="rounded-3xl bg-white p-5 sm:p-8 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
 
             <div className="text-5xl">
               📚
@@ -217,7 +217,7 @@ export default function Dashboard() {
 
           </div>
 
-          <div className="rounded-3xl bg-white p-8 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+          <div className="rounded-3xl bg-white p-5 sm:p-8 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
 
             <div className="text-5xl">
               ✅
@@ -233,7 +233,7 @@ export default function Dashboard() {
 
           </div>
 
-          <div className="rounded-3xl bg-white p-8 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+          <div className="rounded-3xl bg-white p-5 sm:p-8 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
 
             <div className="text-5xl">
               ⏳
@@ -249,7 +249,7 @@ export default function Dashboard() {
 
           </div>
 
-          <div className="rounded-3xl bg-white p-8 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+          <div className="rounded-3xl bg-white p-5 sm:p-8 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
 
             <div className="text-5xl">
               🏆
@@ -275,7 +275,7 @@ export default function Dashboard() {
 
           {/* Overall Progress */}
 
-          <div className="rounded-3xl bg-white p-8 shadow-lg">
+          <div className="rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
             <div className="flex items-center justify-between">
 
@@ -364,7 +364,7 @@ export default function Dashboard() {
 
           <Link
             to="/beginner"
-            className="group rounded-3xl bg-white p-8 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+            className="group rounded-3xl bg-white p-5 sm:p-8 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl"
           >
 
             <div className="flex items-center justify-between">
@@ -409,7 +409,7 @@ export default function Dashboard() {
 
           <Link
             to="/intermediate"
-            className="group rounded-3xl bg-white p-8 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+            className="group rounded-3xl bg-white p-5 sm:p-8 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl"
           >
 
             <div className="flex items-center justify-between">
@@ -454,7 +454,7 @@ export default function Dashboard() {
 
           <Link
             to="/advanced"
-            className="group rounded-3xl bg-white p-8 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+            className="group rounded-3xl bg-white p-5 sm:p-8 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl"
           >
 
             <div className="flex items-center justify-between">
@@ -505,7 +505,7 @@ export default function Dashboard() {
 
           {/* Continue Learning */}
 
-          <div className="rounded-3xl bg-white p-8 shadow-lg">
+          <div className="rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
             <div className="mb-6 flex items-center justify-between">
 
@@ -613,7 +613,7 @@ export default function Dashboard() {
 
           {/* Recent Activity */}
 
-          <div className="rounded-3xl bg-white p-8 shadow-lg">
+          <div className="rounded-3xl bg-white p-5 sm:p-8 shadow-lg">
 
             <h2 className="text-3xl font-bold text-slate-800">
               🕒 Recent Activity
@@ -738,7 +738,7 @@ export default function Dashboard() {
             QUICK ACTIONS
         ========================================= */}
 
-        <div className="mt-10 rounded-3xl bg-white p-10 shadow-lg">
+        <div className="mt-10 rounded-3xl bg-white p-5 sm:p-8 lg:p-10 shadow-lg">
 
           <div className="flex flex-wrap items-center justify-between gap-4">
 
@@ -767,7 +767,7 @@ export default function Dashboard() {
 
             <Link
               to="/beginner"
-              className="rounded-3xl bg-gradient-to-r from-green-600 to-emerald-500 p-8 text-center text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+              className="rounded-3xl bg-gradient-to-r from-green-600 to-emerald-500 p-5 sm:p-5 sm:p-8 text-center text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
             >
 
               <div className="text-5xl">
@@ -786,7 +786,7 @@ export default function Dashboard() {
 
             <Link
               to="/intermediate"
-              className="rounded-3xl bg-gradient-to-r from-blue-600 to-cyan-500 p-8 text-center text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+              className="rounded-3xl bg-gradient-to-r from-blue-600 to-cyan-500 p-5 sm:p-5 sm:p-8 text-center text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
             >
 
               <div className="text-5xl">
@@ -805,7 +805,7 @@ export default function Dashboard() {
 
             <Link
               to="/advanced"
-              className="rounded-3xl bg-gradient-to-r from-purple-600 to-pink-500 p-8 text-center text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+              className="rounded-3xl bg-gradient-to-r from-purple-600 to-pink-500 p-5 sm:p-5 sm:p-8 text-center text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
             >
 
               <div className="text-5xl">
@@ -830,7 +830,7 @@ export default function Dashboard() {
             FOOTER
         ========================================= */}
 
-        <div className="mt-12 rounded-3xl bg-slate-900 p-8 text-center text-white">
+        <div className="mt-12 rounded-3xl bg-slate-900 p-5 sm:p-5 sm:p-8 text-center text-white">
 
           <h3 className="text-2xl font-bold">
             🎓 এক্সেল শিখি

@@ -174,9 +174,9 @@ export default function Quiz() {
     return (
       <div className="min-h-screen bg-slate-100">
 
-        <div className="mx-auto max-w-3xl px-6 py-12">
+        <div className="mx-auto max-w-3xl px-0 py-12">
 
-          <div className="rounded-3xl bg-white p-10 text-center shadow-xl">
+          <div className="rounded-3xl bg-white p-6 sm:p-10 text-center shadow-xl">
 
             <div className="mb-6 text-6xl">
               {passed ? "🏆" : "📘"}
@@ -223,7 +223,7 @@ export default function Quiz() {
 
             <button
                 onClick={restartQuiz}
-                className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+                className="rounded-xl w-full sm:w-auto bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
               >
                 🔄 আবার Quiz দিন
               </button>
@@ -237,14 +237,14 @@ export default function Quiz() {
 
               <Link
                 to="/dashboard"
-                className="rounded-xl bg-purple-600 px-6 py-3 font-semibold text-white transition hover:bg-purple-700"
+                className="rounded-xl w-full sm:w-auto bg-purple-600 px-6 py-3 font-semibold text-white transition hover:bg-purple-700"
               >
                 📊 Dashboard
               </Link>
 
               <Link
                 to="/"
-                className="rounded-xl bg-orange-600 px-6 py-3 font-semibold text-white transition hover:bg-orange-700"
+                className="rounded-xl w-full sm:w-auto bg-orange-600 px-6 py-3 font-semibold text-white transition hover:bg-orange-700"
               >
                 🏠 হোমে ফিরে যান
               </Link>
@@ -263,13 +263,13 @@ export default function Quiz() {
 
     <div className="min-h-screen bg-slate-100">
 
-      <div className="mx-auto max-w-4xl px-6 py-10">
+      <div className="mx-auto max-w-4xl px-0 py-10">
 
-        <div className="rounded-3xl bg-white p-8 shadow-xl">
+        <div className="rounded-3xl bg-white p-5 sm:p-8 shadow-xl">
 
           <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
 
-            <h1 className="text-3xl font-bold text-slate-800">
+            <h1 className="text-2xl sm:text-3xl font-bold text-slate-800">
               📝 {lesson.title}
             </h1>
 
@@ -325,7 +325,7 @@ export default function Quiz() {
               <button
                 key={index}
                 onClick={() => handleSelectAnswer(index)}
-                className={`w-full rounded-2xl border p-5 text-left font-medium transition-all ${
+                className={`w-full rounded-2xl border p-5 break-words text-left font-medium transition-all ${
                   selectedAnswer === index
                     ? "border-green-600 bg-green-100 shadow-md"
                     : "border-slate-300 bg-white hover:border-green-500 hover:bg-green-50"
@@ -342,12 +342,12 @@ export default function Quiz() {
 
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 
           <button
               onClick={handlePrevious}
               disabled={currentQuestion === 0}
-              className={`rounded-xl px-6 py-3 font-semibold transition ${
+              className={`rounded-xl w-full sm:w-auto px-6 py-3 font-semibold transition ${
                 currentQuestion === 0
                   ? "cursor-not-allowed bg-slate-300 text-slate-500"
                   : "bg-slate-200 hover:bg-slate-300"
@@ -359,7 +359,7 @@ export default function Quiz() {
             <button
               onClick={handleNext}
               disabled={selectedAnswer === null}
-              className={`rounded-xl px-8 py-3 font-semibold text-white transition ${
+              className={`rounded-xl w-full sm:w-auto px-8 py-3 font-semibold text-white transition ${
                 selectedAnswer === null
                   ? "cursor-not-allowed bg-slate-400"
                   : currentQuestion === questions.length - 1
@@ -374,21 +374,21 @@ export default function Quiz() {
 
             <Link
               to={`/lesson/${lesson.id}`}
-              className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+              className="rounded-xl w-full sm:w-auto bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
             >
               📖 Lesson
             </Link>
 
             <Link
               to="/dashboard"
-              className="rounded-xl bg-purple-600 px-6 py-3 font-semibold text-white transition hover:bg-purple-700"
+              className="rounded-xl w-full sm:w-auto bg-purple-600 px-6 py-3 font-semibold text-white transition hover:bg-purple-700"
             >
               📊 Dashboard
             </Link>
 
             <Link
               to="/"
-              className="rounded-xl bg-orange-600 px-6 py-3 font-semibold text-white transition hover:bg-orange-700"
+              className="rounded-xl w-full sm:w-auto bg-orange-600 px-6 py-3 font-semibold text-white transition hover:bg-orange-700"
             >
               🏠 Home
             </Link>
