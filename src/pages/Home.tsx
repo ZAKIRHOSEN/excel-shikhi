@@ -344,7 +344,7 @@ export default function Home() {
 
 {/* COURSE SECTION */}
 
-<section className="max-w-7xl mx-auto px-8 pb-20">
+<section className="max-w-7xl mx-auto px-0 pb-20">
 
 <div className="flex items-center justify-between mb-10">
 
