@@ -254,7 +254,7 @@ const handleComplete = () => {
     >
 
       <img
-        src={shot.image}
+        src={shot.image.replace(/\.png$/i, ".webp")}
         alt={shot.title}
         className="h-72 w-full object-cover"
         loading="lazy"
