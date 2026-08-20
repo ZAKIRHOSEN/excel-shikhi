@@ -1,5 +1,7 @@
 const STORAGE_KEY = "excel-shikhi-progress";
 
+const SETTINGS_KEY = "excel-shikhi-settings";
+
 export interface ProgressData {
   completedLessons: number[];
   passedQuizzes: number[];
@@ -103,7 +105,9 @@ export function completeLesson(id: number): void {
   if (!progress.completedLessons.includes(lessonId)) {
     progress.completedLessons.push(lessonId);
 
-    saveProgress(progress);
+    if (isAutoSaveEnabled()) {
+      saveProgress(progress);
+    }
   }
 }
 
@@ -123,7 +127,9 @@ export function passQuiz(id: number): void {
   if (!progress.passedQuizzes.includes(quizId)) {
     progress.passedQuizzes.push(quizId);
 
-    saveProgress(progress);
+    if (isAutoSaveEnabled()) {
+      saveProgress(progress);
+    }
   }
 }
 
@@ -181,5 +187,63 @@ export function resetProgress(): void {
       "Excel Shikhi Progress Reset Error:",
       error
     );
+  }
+}
+
+/**
+ * Settings-derived helpers (read-only consumers of the Settings store).
+ * These make the Settings toggles functional without changing the
+ * progress data shape.
+ */
+
+function readSettingFlag(key: string, fallback: boolean): boolean {
+  try {
+    const raw = localStorage.getItem(SETTINGS_KEY);
+    if (!raw) return fallback;
+    const parsed = JSON.parse(raw) as Record<string, unknown>;
+    return typeof parsed[key] === "boolean"
+      ? (parsed[key] as boolean)
+      : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+/** autoSave controls whether lesson/quiz progress is persisted automatically. */
+export function isAutoSaveEnabled(): boolean {
+  return readSettingFlag("autoSave", true);
+}
+
+/** resumeLastLesson powers the Home "resume" shortcut. */
+export function isResumeLastLessonEnabled(): boolean {
+  return readSettingFlag("resumeLastLesson", true);
+}
+
+/** quizReminder powers the in-lesson quiz nudge. */
+export function isQuizReminderEnabled(): boolean {
+  return readSettingFlag("quizReminder", false);
+}
+
+const LAST_LESSON_KEY = "excel-shikhi-last-lesson";
+
+/** Track the most recently opened lesson for "Resume Last Lesson". */
+export function getLastLessonId(): number | null {
+  try {
+    const raw = localStorage.getItem(LAST_LESSON_KEY);
+    if (!raw) return null;
+    const id = Number(raw);
+    return Number.isFinite(id) && id > 0 ? id : null;
+  } catch {
+    return null;
+  }
+}
+
+export function setLastLessonId(id: number): void {
+  const lessonId = Number(id);
+  if (!Number.isFinite(lessonId) || lessonId <= 0) return;
+  try {
+    localStorage.setItem(LAST_LESSON_KEY, String(lessonId));
+  } catch {
+    /* ignore */
   }
 }

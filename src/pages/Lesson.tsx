@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { lessons } from "../data/lessons";
-import { completeLesson, isLessonCompleted } from "../utils/progress";
+import { completeLesson, isLessonCompleted, setLastLessonId, isQuizReminderEnabled, isQuizPassed } from "../utils/progress";
 
 export default function Lesson() {
   const { lessonId } = useParams<{ lessonId: string }>();
@@ -17,6 +17,7 @@ export default function Lesson() {
   useEffect(() => {
     if (lesson) {
       setCompleted(isLessonCompleted(lesson.id));
+      setLastLessonId(lesson.id);
     } else {
       setCompleted(false);
     }
@@ -74,6 +75,12 @@ const handleComplete = () => {
     currentIndex < lessons.length - 1
       ? lessons[currentIndex + 1]
       : null;
+
+  const showQuizReminder =
+    isQuizReminderEnabled() &&
+    completed &&
+    !isQuizPassed(lesson.id) &&
+    (lesson.quiz ?? []).length > 0;
 
   return (
 
@@ -645,6 +652,21 @@ const handleComplete = () => {
           </div>
 
         </div>
+
+                {showQuizReminder && (
+                  <div className="mt-8 rounded-3xl border border-blue-200 bg-blue-50 p-5 sm:p-8 shadow-lg">
+                    <h2 className="text-2xl font-bold text-blue-800">📝 Quiz দিন</h2>
+                    <p className="mt-2 leading-7 text-slate-600">
+                      এই Lesson শেষ করেছেন, কিন্তু এখনো Quiz পাস করেননি। Quiz দিয়ে আপনার শেখা যাচাই করুন।
+                    </p>
+                    <Link
+                      to={`/quiz/${lesson.id}`}
+                      className="mt-4 inline-flex rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+                    >
+                      📝 Quiz শুরু করুন
+                    </Link>
+                  </div>
+                )}
 
                 {/* Navigation */}
 

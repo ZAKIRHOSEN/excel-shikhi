@@ -5,7 +5,7 @@
 
 import { Link } from "react-router-dom";
 import { lessons } from "../data/lessons";
-import { getProgress } from "../utils/progress";
+import { getProgress, isResumeLastLessonEnabled, getLastLessonId } from "../utils/progress";
 import type { Lesson } from "../types/lesson";
 
 // ইংরেজি সংখ্যাকে বাংলা সংখ্যায় রূপান্তর করে
@@ -110,6 +110,15 @@ export default function Home() {
     .reverse()
     .map((id) => lessons.find((lesson) => lesson.id === id))
     .filter((lesson): lesson is Lesson => lesson !== undefined);
+
+  const resumeLessonId = isResumeLastLessonEnabled()
+    ? getLastLessonId()
+    : null;
+
+  const resumeLesson =
+    resumeLessonId !== null
+      ? lessons.find((lesson) => lesson.id === resumeLessonId)
+      : undefined;
 
   return (
     <div className="min-h-screen bg-slate-100">
@@ -465,6 +474,28 @@ export default function Home() {
 {/* PROGRESS & RECENT LESSONS */}
 
 <section className="max-w-7xl mx-auto px-0 pb-24">
+
+        {resumeLesson && (
+          <div className="mb-8 rounded-[30px] bg-white dark:bg-slate-900 border border-green-200 dark:border-green-700 p-8 shadow-lg flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <span className="font-bold text-green-700 dark:text-green-400">
+                শেষ দেখা লেসন
+              </span>
+              <h2 className="mt-2 text-2xl font-black text-slate-900 dark:text-white">
+                {resumeLesson.title}
+              </h2>
+              <p className="mt-1 text-slate-500 dark:text-slate-400">
+                যেখানে থেমেছিলেন, সেখান থেকে শেখা চালিয়ে যান।
+              </p>
+            </div>
+            <Link
+              to={`/lesson/${resumeLesson.id}`}
+              className="inline-flex rounded-2xl bg-green-700 px-6 py-4 font-bold text-white hover:bg-green-800"
+            >
+              ▶️ আবার শুরু করুন
+            </Link>
+          </div>
+        )}
 
 <div className="grid lg:grid-cols-2 gap-8">
 

@@ -49,6 +49,25 @@ export default function Quiz() {
     }
   }, [finished, lesson, questions, answers]);
 
+  const question = questions[currentQuestion];
+
+  const selectedAnswer = answers[currentQuestion];
+
+  const optionCount = question?.options?.length ?? 0;
+
+  // প্রতিটি প্রশ্নের options random order-এ দেখায়, কিন্তু correct answer mapping সংরক্ষণ করে
+  const optionOrder = useMemo(() => {
+    const total = question?.options?.length ?? 0;
+    if (total === 0) return [];
+    const order = Array.from({ length: total }, (_, i) => i);
+    for (let i = total - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [order[i], order[j]] = [order[j], order[i]];
+    }
+    return order;
+  }, [lesson?.id, currentQuestion, questions.length, optionCount]);
+
+
   if (!lesson) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-slate-100 p-6">
@@ -123,21 +142,6 @@ export default function Quiz() {
       </div>
     );
   }
-
-  const question = questions[currentQuestion];
-
-  const selectedAnswer = answers[currentQuestion];
-
-  // প্রতিটি প্রশ্নের options random order-এ দেখায়, কিন্তু correct answer mapping সংরক্ষণ করে
-  const optionOrder = useMemo(() => {
-    const total = question.options.length;
-    const order = Array.from({ length: total }, (_, i) => i);
-    for (let i = total - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [order[i], order[j]] = [order[j], order[i]];
-    }
-    return order; // order[displayPos] = original option index
-  }, [lesson?.id, currentQuestion, questions.length, question.options.length]);
 
   const calculateScore = () => {
     return questions.reduce((total, question, index) => {
